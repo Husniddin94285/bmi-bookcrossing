@@ -10,8 +10,14 @@ import os
 import zipfile
 from xml.sax.saxutils import escape as _xe
 
-SRC = "BMI_Intellektual_Bookcrossing_Platformasi.md"
-OUT = "BMI_Intellektual_Bookcrossing_Platformasi.docx"
+import sys
+
+# Default fayllar; argv[1] orqali o'zgartirish mumkin
+SRC = "BMI_Rajobova_Dinora.md"
+OUT = "BMI_Rajobova_Dinora.docx"
+if len(sys.argv) > 1:
+    SRC = sys.argv[1]
+    OUT = SRC.replace(".md", ".docx")
 
 W = 'http://schemas.openxmlformats.org/wordprocessingml/2006/main'
 
